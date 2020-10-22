@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "style:fix": "import-sort --write \"**/{src,tests,e2e}/**/*.ts\" && prettier --write \"**/{src,tests,e2e}/**/*.{*css,ts}\" && js-beautify \"**/src/**/*.html\"",
+    "style": "import-sort -l \"**/{src,tests,e2e}/**/*.ts\" && prettier --check \"**/{src,tests,e2e}/**/*.{*css,ts}\""
   },
   "private": true,
   "dependencies": {
@@ -58,7 +60,7 @@
   },
   "importSort": {
     ".ts, .tsx": {
-      "parser": "type-script",
+      "parser": "typescript",
       "style": "module",
       "options": {}
     }
