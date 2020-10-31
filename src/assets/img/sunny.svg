@@ -1,0 +1,12 @@
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <circle fill="#ffc106" id="svg_1" transform="matrix(0.543121,0.145529,-0.145529,0.543121,32.0002,31.9993) " r="22.97" class="fil0"/>
+  <path fill="none" stroke-miterlimit="22.9256" stroke-linejoin="bevel" stroke-linecap="round" stroke-width="2.5" stroke="#ffc106" id="svg_2" d="m32,12.4c0,1.52 0,2 0,2m-9.8,0.63c0.76,1.32 1,1.73 1,1.73m-8.17,5.44c1.32,0.76 1.73,1 1.73,1m-4.36,8.8c1.53,0 2,0 2,0m0.63,9.8c1.32,-0.76 1.73,-1 1.73,-1m5.44,8.17c0.76,-1.32 1,-1.73 1,-1.73m8.8,4.36c0,-1.53 0,-2 0,-2m9.8,-0.63c-0.76,-1.32 -1,-1.73 -1,-1.73m8.17,-5.44c-1.32,-0.76 -1.73,-1 -1.73,-1m4.36,-8.8c-1.53,0 -2,0 -2,0m-0.63,-9.8c-1.32,0.76 -1.73,1 -1.73,1m-5.44,-8.17c-0.76,1.32 -1,1.73 -1,1.73" class="fil1 str0"/>
+ </g>
+</svg>
