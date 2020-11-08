@@ -22,17 +22,6 @@ export class CurrentWeatherComponent implements OnInit {
       description: 'soleggiato',
     } as ICurrentWeather
     */
-
-    // Null guarding: Strategy 1, Property initialization
-
-    this.current = {
-      city: '',
-      country: '',
-      date: 0,
-      image: '',
-      temperature: 0,
-      description: '',
-    } as ICurrentWeather
   }
 
   ngOnInit(): void {
