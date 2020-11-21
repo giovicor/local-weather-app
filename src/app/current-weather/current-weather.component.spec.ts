@@ -75,7 +75,26 @@ describe('CurrentWeatherComponent (mock)', () => {
 
     // Assert on DOM
     const debugEl = fixture.debugElement
-    const titleEl: HTMLElement = debugEl.query(By.css('span')).nativeElement
+    const titleEl: HTMLElement = debugEl.query(By.css('.mat-title')).nativeElement
     expect(titleEl.textContent).toContain('Bethesda')
+  })
+
+  it(`should get correct results from getOrdinal(date)`, () => {
+    // Arrange
+    weatherServiceMock.getCurrentWeather.and.returnValue(of())
+
+    // Act
+    fixture.detectChanges() // triggers ngOnInit
+
+    // Asserts
+
+    // date: 20201120 - millisecs: 1605865983000
+    expect(component.getOrdinal(1605865983000)).toEqual('th')
+    // date: 20201121 - millisecs: 1605942000000
+    expect(component.getOrdinal(1605942000000)).toEqual('st')
+    // date: 20201122 - millisecs: 1606028400000
+    expect(component.getOrdinal(1606028400000)).toEqual('nd')
+    // date: 20201123 - millisecs: 1606114800000
+    expect(component.getOrdinal(1606114800000)).toEqual('rd')
   })
 })

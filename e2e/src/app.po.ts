@@ -7,6 +7,6 @@ export class AppPage {
 
   getTitleText(): Promise<string> {
     // return element(by.css('app-root .content span')).getText() as Promise<string>
-    return element(by.css('app-root div h1')).getText() as Promise<string>
+    return element(by.css('app-root div mat-toolbar span')).getText() as Promise<string>
   }
 }
