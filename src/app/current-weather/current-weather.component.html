@@ -3,7 +3,8 @@
 </div>
 <div *ngIf="current">
   <div fxLayout="row">
-    <div fxFlex="66%" class="no-margin mat-title">{{current.city}}, {{current.country}}</div>
+    <div fxFlex="66%" class="no-margin mat-title">{{current.city}}, {{current.country}}
+    </div>
     <div fxFlex class="no-margin mat-h3">
       {{current.date | date:'EEEE'}}<br> <!-- date:'fullDate' -->
       {{current.date | date:'MMM d'}}{{getOrdinal(current.date)}}

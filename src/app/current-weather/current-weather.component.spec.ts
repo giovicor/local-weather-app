@@ -3,6 +3,7 @@ import { By } from '@angular/platform-browser'
 import { injectSpy } from 'angular-unit-test-helper'
 import { of } from 'rxjs'
 
+import { MaterialModule } from '../material.module'
 import { WeatherService } from '../weather/weather.service'
 import { fakeWeather } from '../weather/weather.service.fake'
 import { CurrentWeatherComponent } from './current-weather.component'
@@ -19,6 +20,7 @@ describe('CurrentWeatherComponent (mock)', () => {
 
     await TestBed.configureTestingModule({
       declarations: [CurrentWeatherComponent],
+      imports: [MaterialModule],
       // imports: [HttpClientTestingModule],
 
       // If we have to include HttpClientTestingModule
