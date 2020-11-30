@@ -16,4 +16,8 @@ export class WeatherServiceFake implements IWeatherService {
   public getCurrentWeather(city: string, country: string): Observable<ICurrentWeather> {
     return of(fakeWeather)
   }
+
+  public getCurrentWeatherByCoords(coords: Coordinates): Observable<ICurrentWeather> {
+    return of(fakeWeather)
+  }
 }
