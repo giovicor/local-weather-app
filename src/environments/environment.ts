@@ -6,6 +6,10 @@ export const environment = {
   production: false,
   appId: '72cefa721b38d959629aa1ad1af34e46',
   baseUrl: 'http://',
+  geonamesApi: {
+    username: 'giocor',
+    api: 'api',
+  },
 }
 
 /*

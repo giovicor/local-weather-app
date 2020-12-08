@@ -1,8 +1,8 @@
 <form class="control-margin-bottom">
   <mat-form-field appearance="outline" class="control-width">
-    <mat-label>Città</mat-label>
+    <mat-label>Città o CAP</mat-label>
     <mat-icon matPrefix>search</mat-icon>
-    <input matInput aria-label="Città o CAP" [formControl]="search" />
+    <input matInput aria-label="Città o C" [formControl]="search" />
     <mat-hint>Specifica una città. Per esempio 'Paris, FR'</mat-hint>
     <mat-error *ngIf="search.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>

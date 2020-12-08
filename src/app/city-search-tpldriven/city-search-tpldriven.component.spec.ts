@@ -1,8 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { FormsModule } from '@angular/forms'
-import { injectSpy } from 'angular-unit-test-helper'
+import { NoopAnimationsModule } from '@angular/platform-browser/animations'
+import {
+  ObservablePropertyStrategy,
+  autoSpyObj,
+  injectSpy,
+} from 'angular-unit-test-helper'
 import { of } from 'rxjs'
 
+import { MaterialModule } from '../material.module'
 import { WeatherService } from '../weather/weather.service'
 import { CitySearchTpldrivenComponent } from './city-search-tpldriven.component'
 
@@ -12,13 +18,15 @@ describe('CitySearchTpldrivenComponent', () => {
   let weatherServiceMock: jasmine.SpyObj<WeatherService>
 
   beforeEach(async () => {
-    const weatherServiceSpy = jasmine.createSpyObj('WeatherService', [
-      'getCurrentWeather',
-    ])
+    const weatherServiceSpy = autoSpyObj(
+      WeatherService,
+      ['currentWeather$'],
+      ObservablePropertyStrategy.BehaviorSubject
+    )
 
     await TestBed.configureTestingModule({
       declarations: [CitySearchTpldrivenComponent],
-      imports: [FormsModule],
+      imports: [FormsModule, MaterialModule, NoopAnimationsModule],
       providers: [{ provide: WeatherService, useValue: weatherServiceSpy }],
     }).compileComponents()
 

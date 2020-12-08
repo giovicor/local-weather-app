@@ -7,7 +7,12 @@ import { MaterialModule } from './material.module'
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent, createComponentMock('CurrentWeatherComponent')],
+      declarations: [
+        AppComponent,
+        createComponentMock('CurrentWeatherComponent'),
+        createComponentMock('CitySearchComponent'),
+        createComponentMock('CitySearchTpldrivenComponent'),
+      ],
       imports: [MaterialModule],
     }).compileComponents()
   })
@@ -28,6 +33,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent)
     fixture.detectChanges()
     const compiled = fixture.nativeElement
-    expect(compiled.querySelector('span').textContent).toContain('Previsioni meteo')
+    expect(compiled.querySelector('span').textContent).toContain('Previsioni Meteo')
   })
 })
