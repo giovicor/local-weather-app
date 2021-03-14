@@ -33,7 +33,7 @@ export interface IWeatherService {
   */
   readonly currentWeather$: BehaviorSubject<ICurrentWeather>
   getCurrentWeather(search: string, country?: string): Observable<ICurrentWeather>
-  getCurrentWeatherByCoords(coords: Coordinates): Observable<ICurrentWeather>
+  getCurrentWeatherByCoords(coords: GeolocationCoordinates): Observable<ICurrentWeather>
   updateCurrentWeather(search: string, country?: string): void
 }
 
@@ -74,7 +74,7 @@ export class WeatherService implements IWeatherService {
           return this.getCurrentWeatherByCoords({
             latitude: postalCode.lat,
             longitude: postalCode.lng,
-          } as Coordinates)
+          } as GeolocationCoordinates)
         } else {
           let uriParams = new HttpParams()
           uriParams = uriParams.set('q', country ? `${search},${country}` : search)
@@ -84,7 +84,7 @@ export class WeatherService implements IWeatherService {
     )
   }
 
-  getCurrentWeatherByCoords(coords: Coordinates): Observable<ICurrentWeather> {
+  getCurrentWeatherByCoords(coords: GeolocationCoordinates): Observable<ICurrentWeather> {
     const uriParams = new HttpParams()
       .set('lat', coords.latitude.toString())
       .set('lon', coords.longitude.toString())
